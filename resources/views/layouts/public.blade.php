@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $settings->business_name ?? 'Catálogo Web' }}</title>
 
-    <link rel="stylesheet" href="{{ asset('css/catalog.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/catalog.css') }}">
+    @php
+    $primaryColor = '#111827';
+    $secondaryColor = '#f59e0b';
+
+    if (!empty($settings?->primary_color) && preg_match('/^#[0-9A-Fa-f]{6}$/', $settings->primary_color)) {
+        $primaryColor = $settings->primary_color;
+    }
+
+    if (!empty($settings?->secondary_color) && preg_match('/^#[0-9A-Fa-f]{6}$/', $settings->secondary_color)) {
+        $secondaryColor = $settings->secondary_color;
+    }
+@endphp
+
+<style>
+    :root {
+        --primary-color: {{ $primaryColor }};
+        --secondary-color: {{ $secondaryColor }};
+    }
+</style>
 </head>
 <body>
     <header class="site-header">
@@ -38,7 +57,7 @@
     <footer class="site-footer">
         <div class="container footer-content">
             <p>© {{ date('Y') }} {{ $settings->business_name ?? 'Nombre del negocio' }}. Todos los derechos reservados.</p>
-            <p class="powered">Catálogo digital desarrollado por TuMarca.</p>
+            <p class="powered">{{ $settings->footer_text ?? 'Catálogo digital desarrollado por TuMarca.' }}</p>
         </div>
     </footer>
 </body>
