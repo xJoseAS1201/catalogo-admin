@@ -472,6 +472,64 @@ img {
     background: #16a34a;
 }
 
+.product-card {
+    position: relative;
+    transition: 0.22s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(17, 24, 39, 0.12);
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    transition: 0.25s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.product-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.product-meta .stock {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.product-actions .btn-small {
+    flex: 1;
+}
+
+.product-actions .btn-small.whatsapp {
+    font-weight: 800;
+}
+
 @media (max-width: 800px) {
     .header-content {
         flex-direction: column;
