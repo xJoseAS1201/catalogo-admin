@@ -453,6 +453,25 @@ img {
     gap: 12px;
 }
 
+.floating-whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 50;
+    background: #22c55e;
+    color: #ffffff;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    box-shadow: 0 14px 30px rgba(34, 197, 94, 0.35);
+    transition: 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-2px);
+    background: #16a34a;
+}
+
 @media (max-width: 800px) {
     .header-content {
         flex-direction: column;
@@ -479,5 +498,12 @@ img {
 
     .contact-grid {
     grid-template-columns: 1fr;
+}
+
+.floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 15px;
+    font-size: 14px;
 }
 }
